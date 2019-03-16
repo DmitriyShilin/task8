@@ -13,9 +13,8 @@ public class RandomCreateTest {
 
     @Test
     public void testCreateSessionId() {
-        int expResult = 10_000_000;
         int result = RandomCreate.createSessionId();
-        assertEquals(expResult, result, 90_000_000);
+        assertTrue(10_000_000 <= result && result < 100_000_000);
     }
     
 }

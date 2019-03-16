@@ -4,12 +4,12 @@ public class Connection {
     
     private final long time;
     private final int sessionId;
-    private final String IP;
+    private final String ip;
     
-    public Connection(long time, int sessionId, String IP){
+    public Connection(long time, int sessionId, String ip){
         this.time = time;
         this.sessionId = sessionId;
-        this.IP = IP;
+        this.ip = ip;
     }
     
     public long getTime(){
@@ -21,11 +21,11 @@ public class Connection {
     }
     
     public String getIP(){
-        return IP;
+        return ip;
     }
     
     @Override
     public  String toString(){     
-        return time + " " + sessionId + " " + IP;
+        return time + " " + sessionId + " " + ip;
     }
 }

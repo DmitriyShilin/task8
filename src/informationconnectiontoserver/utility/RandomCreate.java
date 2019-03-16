@@ -1,17 +1,21 @@
 package informationconnectiontoserver.utility;
 
-import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 public class RandomCreate{
     
-    public static String createIP(){        
-        return ThreadLocalRandom.current().nextInt(256)+"."+
-               ThreadLocalRandom.current().nextInt(256)+"."+
-               ThreadLocalRandom.current().nextInt(256)+"."+
-               ThreadLocalRandom.current().nextInt(256);
+    public static String createIP(){ 
+        Random random = new Random();
+        return random.nextInt(256)+"."+
+               random.nextInt(256)+"."+
+               random.nextInt(256)+"."+
+               random.nextInt(256);
     }
     
     public static int createSessionId(){
-        return ThreadLocalRandom.current().nextInt(10_000_000, 100_000_000);
+        Random random = new Random();
+        int min = 10_000_000;
+        int max = 100_000_000;
+        return min + random.nextInt(max-min);
     }
 }
