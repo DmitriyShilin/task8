@@ -14,7 +14,10 @@ public class InformationConnectionToServer {
         
         //create 10 Connection and write to log.txt
         for(int i=0; i<10; i++){
-            Connection connection = new Connection(System.currentTimeMillis(), RandomCreate.createSessionId(), RandomCreate.createIP());
+            long time = System.currentTimeMillis();
+            int sessionId = RandomCreate.createSessionId();
+            String ip = RandomCreate.createIP();
+            Connection connection = new Connection(time, sessionId, ip);
             ReadWriteDelete.writeToFile(connection, true);
         }
         
