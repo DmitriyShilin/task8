@@ -32,7 +32,7 @@ public class ReadWriteDelete {
         return connections;
     }    
     
-    public static void writeToFile(Connection connection, boolean append) {
+    public static synchronized void writeToFile(Connection connection, boolean append) {
         try(FileWriter file = new FileWriter(PATH, append)){            
             file.write(connection.toString() + "\r\n");          
         } catch (IOException ex) {
